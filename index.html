@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>European Union Employment Data Viewer</title>
+  <meta charset="utf-8">
+  <meta name="description" content="European Union Employment Data Viewer">
+  <meta name="author" content="Frank Fischer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>European Union Employment Data Viewer</h1>
+    <h2>Alternative Viewer - Coursera Project</h2>
+    <p>Frank Fischer<br/>Coursera Participant</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Motivation and Data Set</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The office of statistics of the European Union offers a variety of datasets. In this case, we are using the following dataset:</p>
+
+<p><a href="http://ec.europa.eu/eurostat/cache/metadata/en/ei_qna_esms.htm">Quarterly National Accounts by 10 branches - employment data (namq_nace10_e)</a></p>
+
+<p>The interface provided is very basic so I thought it would be a good example to be used.</p>
+
+<p>It was downloaded on the 4/17/2016 and contains quarterly data from the first quarter of 1980 until second quarter of 2014. Last data update was done 9/19/2014</p>
+
+<p>Original and converted data is provided in the project.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Data Preparation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The following steps were done:</p>
+
+<ol>
+<li>It was imported to R Studio as a CSV file</li>
+<li>The data format was corrected to be numeric</li>
+<li>The first column was expanded to individual columns</li>
+<li>All lines representing aggregated values were purged</li>
+<li>Afterwarts the file was saved for easy access.</li>
+</ol>
+
+<p>The code for this is provided in the server.ui file as a comment.</p>
+
+<p>Also, look up tables are provided for parameter values.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Usage of the Interface</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The interface splits in two parts:</p>
+
+<p>On the left side, filter criterias can be selected:</p>
+
+<ol>
+<li>NACE as an industry selector</li>
+<li>Unit for the observations to be measured in (be aware that percentual values with a NACE code of all industries result in 100% values)</li>
+<li>Seasonal adjustment as the employment market usually shows a local height in winter and local low in summer</li>
+<li>Type of employment like self-employed</li>
+<li>A slider to select the specific quarter</li>
+</ol>
+
+<p>On the right side, there is an overview over the major EU nations (Germany, UK, France, Italy, and Spain) with a red line indicating the selected quarter. Below this, there are an interactive map displaying the data specific to the quarter, an histeresis, and a comparison over all EU countries.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example Case to Look At</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The following configuration NACE real estate, unit thousands of working hours, unadjusted seasons, and all employment as indicator, results in the following plot:</p>
+
+<p><img src="figure/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+<p>It is interesting to see the constant increase in the UK while all other major nations stay constant.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Motivation and Data Set'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Data Preparation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Usage of the Interface'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example Case to Look At'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
